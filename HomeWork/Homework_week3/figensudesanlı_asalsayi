@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class AsalSayiKontrol {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Bir sayı girin: ");
+        int sayi = scanner.nextInt();
+        scanner.close();
+
+        boolean AsalSayi = true;
+
+        if (sayi <= 1) {
+            AsalSayi = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(sayi); i++) {
+                if (sayi % i == 0) {
+                    AsalSayi = false;
+                    break;
+                }
+            }
+        }
+
+        if (AsalSayi) {
+            System.out.println(sayi + " asal sayıdır.");
+        } else {
+            System.out.println(sayi + " asal sayı değildir.");
+        }
+    }
+}
