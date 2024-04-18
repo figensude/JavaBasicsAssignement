@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class PalindromSayi {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Palindrom olup olmadığını kontrol etmek için bir sayi girin: ");
+        String str = scanner.nextLine();
+        scanner.close();
+
+        boolean Palindrom = true;
+
+        for (int i = 0; i < str.length() / 2; i++) {
+            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+                Palindrom = false;
+                break;
+            }
+        }
+
+        if (Palindrom) {
+            System.out.println("Girdiğiniz sayi palindromdur.");
+        } else {
+            System.out.println("Girdiğiniz sayi palindrom değildir.");
+        }
+    }
+}
