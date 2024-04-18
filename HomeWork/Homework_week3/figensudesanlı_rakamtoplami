@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class RakamToplami {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Pozitif bir tamsayı girin: ");
+        int sayi = scanner.nextInt();
+        scanner.close();
+
+        int toplam = islemToplam(sayi);
+        System.out.println("Girdiğiniz sayının rakamlarının toplamı: " + toplam);
+    }
+
+    public static int islemToplam(int sayi) {
+        int toplam = 0;
+
+        while (sayi != 0) {
+            int digit = sayi % 10;
+            toplam += digit;
+            sayi /= 10;
+        }
+
+        return toplam;
+    }
+}
